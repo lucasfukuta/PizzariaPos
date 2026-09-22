@@ -50,22 +50,31 @@ A solução está organizada em um projeto principal de API:
 
 ```text
 PizzariaPos/
-│
 ├── Pizza.API/
-│   │
 │   ├── Controllers/
-│   │
+│   │   ├── ErrorController.cs
+│   │   ├── EstoqueController.cs
+│   │   └── SaborController.cs
+│   ├── Exceptions/
+│   │   └── NaoEncontradoException.cs
+│   ├── Models/
+│   │   ├── Estoque.cs
+│   │   └── Pizza.cs
 │   ├── Persistence/
-│   │   ├── PizzaRepository
-│   │   └── EstoqueRepository
-│   │
+│   │   ├── EstoqueRepository.cs
+│   │   ├── PizzaDbContext.cs
+│   │   └── PizzaRepository.cs
+│   ├── Properties/
+│   │   └── launchSettings.json
+│   ├── Pizza.API.csproj
+│   ├── Pizza.API.http
 │   ├── Program.cs
-│   ├── appsettings.json
-│   └── Pizza.API.csproj
-│
-├── Pizzaria.sln
+│   ├── appsettings.Development.json
+│   └── appsettings.json
+├── .gitattributes
 ├── .gitignore
-└── .gitattributes
+├── Pizzaria.sln
+└── README.md
 ```
 
 A separação entre controllers e camada de persistência foi utilizada para organizar as responsabilidades da aplicação e facilitar sua evolução.
